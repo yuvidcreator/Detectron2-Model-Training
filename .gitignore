@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.ipynb_checkpoints/
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# Other dirs
+d2_pre_trained_model/
+output_eval/
+output_models/
+runs/
+yolov12s_runs/

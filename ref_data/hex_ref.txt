@@ -1,0 +1,177 @@
+
+# P237C
+| Shade | Hex     | RGB             | HSV               |
+| ----- | ------- | --------------- | ----------------- |
+| 35    | #FBD5FF | (251, 213, 255) | (292°, 16%, 100%) |
+| 55    | #F8B9FF | (248, 185, 255) | (292°, 27%, 100%) |
+| 70    | #F3A0FF | (243, 160, 255) | (291°, 37%, 100%) |
+| 85    | #EC88FF | (236, 136, 255) | (290°, 47%, 100%) |
+| 100   | #E578FF | (229, 120, 255) | (289°, 53%, 100%) |
+
+# P218C
+| Shade | Hex     | RGB             | HSV               |
+| ----- | ------- | --------------- | ----------------- |
+| 70    | #F17AFF | (241, 122, 255) | (289°, 52%, 100%) |
+| 80    | #EC6AFF | (236, 106, 255) | (288°, 58%, 100%) |
+| 90    | #E75BFF | (231, 91, 255)  | (287°, 64%, 100%) |
+| 100   | #E14BFF | (225, 75, 255)  | (286°, 71%, 100%) |
+
+# P310C
+| Shade | Hex     | RGB             | HSV               |
+| ----- | ------- | --------------- | ----------------- |
+| 35    | #C3FFED | (195, 255, 237) | (163°, 24%, 100%) |
+| 50    | #ACFFE8 | (172, 255, 232) | (163°, 33%, 100%) |
+| 65    | #98FFE1 | (152, 255, 225) | (163°, 40%, 100%) |
+
+# P298C
+| Shade | Hex     | RGB             | HSV              |
+| ----- | ------- | --------------- | ---------------- |
+| 65    | #88E9F1 | (136, 233, 241) | (186°, 44%, 95%) |
+| 85    | #6AE1EE | (106, 225, 238) | (186°, 55%, 93%) |
+| 100   | #52DAEC | (82, 218, 236)  | (187°, 65%, 93%) |
+
+# P301C
+| Shade | Hex     | RGB            | HSV              |
+| ----- | ------- | -------------- | ---------------- |
+| 65    | #468FCD | (70, 143, 205) | (206°, 66%, 80%)  |
+| 80    | #216EC3 | (33, 110, 195) | (212°, 83%, 76%)  |
+| 100   | #003E98 | (0, 62, 152)   | (220°, 100%, 60%) |
+
+
+FFF880 --> yellowish
+657657 --> greenish gray
+519B51 --> green for CIR
+FF40FF --< magenta
+934593 ---> purple for SQR
+800080 -->
+# -----------------
+During data prepartion, I used below unique annotation classes 
+Because python ptoject must be optimized, wll organised, modular
+extendeable for future requiremenst, accuracy, speed and much more.
+
+classes :
+# this class for identifying unique traingle before image processing
+# act as a landmark on the image
+triangle
+
+# below are list of unique circular objects classses with sequence
+P237C_35_CIR
+P237C_55_CIR
+P237C_70_CIR
+P237C_85_CIR
+P237C_100_CIR
+
+P218C_70_CIR
+P218C_80_CIR
+P218C_90_CIR
+P218C_100_CIR
+
+P310C_35_CIR
+P310C_50_CIR
+P310C_65_CIR
+
+P298C_65_CIR
+P298C_85_CIR
+P298C_100_CIR
+
+P301C_65_CIR
+P301C_80_CIR
+P301C_100_CIR
+
+# below are list of unique squared objects classses with sequence
+P237C_35_SQR
+P237C_55_SQR
+P237C_70_SQR
+P237C_85_SQR
+P237C_100_SQR
+
+P218C_70_SQR
+P218C_80_SQR
+P218C_90_SQR
+P218C_100_SQR
+
+P310C_35_SQR
+P310C_50_SQR
+P310C_65_SQR
+
+P298C_65_SQR
+P298C_85_SQR
+P298C_100_SQR
+
+P301C_65_SQR
+P301C_80_SQR
+P301C_100_SQR
+
+# ----------------
+
+
+P237C - #EC86D0
+
+P218C - #E56DB1
+
+P310C - #6AD1E3
+
+P301C - #004B87
+
+
+# Reference Colors list of Strips circular objects (Top to Bottom) and 
+# Mobile clicked cropped images paths
+P237C - 35 - #FBD5FF
+RGB -- (251, 213, 255)
+HSV -- (294, 16.5, 100)
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P237C_35.png
+
+P237C - 55 - #F8B9FF
+RGB -- (248, 185, 255)
+HSV -- (294, 16.5, 100)
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P237C_55.png
+
+P237C - 70 - #F3A0FF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P237C_70.png
+
+P237C - 85 - #EC88FF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P237C_85.png
+
+P237C - 100 - #E578FF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P237C_100.png
+	
+P218C - 70 - #F17AFF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P218C_70.png
+
+P218C - 80 - #EC6AFF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P218C_80.png
+
+P218C - 90 - #E75BFF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P218C_90.png
+
+P218C - 100 - #E14BFF
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P218C_100.png
+
+
+
+P310C - 35 - #C3FFED
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P310C_35.png
+
+P310C - 50 - #ACFFE8
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P310C_50.png
+
+P310C - 65 - #98FFE1
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P310C_65.png
+
+P298C - 65 - #88E9F1
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P298C_65.png
+
+P298C - 85 - #6AE1EE
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P298C_85.png
+
+P298C - 100 - #52DAEC
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P298C_100.png
+
+P301C - 65 - #468FCD
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P301C_65.png
+
+P301C - 80 - #216EC3
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P301C_80.png
+
+P301C - 100 - #003E98
+/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/Color_Detection/Experiment_1/input_data/color_refs/P301C_100.png
