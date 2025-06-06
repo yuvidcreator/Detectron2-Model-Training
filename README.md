@@ -54,3 +54,8 @@ For training a custom instance segmentation model with Detectron2 using 37 class
 * **Monitor Performance:** Track metrics such as mAP and mask quality.
 
 In summary: While there's no magic number, a dataset of at least 5,000-10,000 annotated images with good variability and precise masks is a reasonable starting point for training a Detectron2 instance segmentation model with 37 classes. Remember that data quality and diversity are more critical than sheer quantity.
+
+
+# For more --
+
+[https://github.com/pytorch/pytorch#from-source](https://github.com/pytorch/pytorch#from-source)
