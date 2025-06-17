@@ -1,3 +1,4 @@
+from collections import defaultdict
 import copy
 import os
 import multiprocessing as mp
@@ -11,6 +12,7 @@ from detectron2.data import DatasetCatalog
 import detectron2.data.detection_utils as utils
 from detectron2.utils.visualizer import Visualizer
 from detectron2.utils.visualizer import ColorMode
+import torch
 
 
 
@@ -18,16 +20,17 @@ cfg = get_cfg()
 
 cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"))
 
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3   # set a custom testing threshold
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.4  # set a custom testing threshold
 
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 37   # define our custom annotated total number of classes
 
-cfg.MODEL.WEIGHTS = "output_models/2025-06-05_18:15:21/model_final.pth"  # path to the model we just trained
+cfg.MODEL.WEIGHTS = "output_models/2025-06-06_19:38:39/model_final.pth"  # path to the model we just trained
+# cfg.MODEL.WEIGHTS = "output_models/2025-06-06_19:38:39/model_final.pth"  # path to the model we just trained
 # cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "output_models/model_final.pth")  # path to the model we just trained
 
 cfg.MODEL.DEVICE = "cpu"
 
-dataset_name = "welleys_d2_dataset"
+dataset_name = "welleys_d2_train_dataset"
 
 cir_class = [
     "P237C_35_CIR",
@@ -110,7 +113,7 @@ classes = [
     "P301C_100_SQR",
 ]
 
-image_path = "/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/ML_Projects/D2_model_training/input_images/image_2.png"
+image_path = "/Users/MGBiMACmini_0002/Desktop/Yuvraaj/POCs/ML_Projects/D2_model_training/input_images/1750151770.jpg"
 
 # MetadataCatalog.get(dataset_name).set(thing_classes = classes, thing_colors = [(112, 36, 246), (81,155,81), (147, 69, 147)])
 # metadata_obj = MetadataCatalog.get(dataset_name).set(thing_classes = classes)
@@ -125,12 +128,36 @@ img_cv2_obj = cv2.imread(image_path)
 
 pred_output_obj = predictor(img_cv2_obj)
 
+
+def group_masks_by_class(pred_classes: torch.Tensor, pred_masks: torch.Tensor):
+    """
+    Groups predicted masks by their corresponding class IDs.
+    Args:
+        pred_classes (torch.Tensor): Tensor of shape [N] with class IDs.
+        pred_masks (torch.Tensor): Tensor of shape [N, H, W] with boolean masks.
+    Returns:
+        dict: Dictionary where keys are class IDs (int), and values are lists of masks (torch.Tensor).
+            Format: {class_id: [mask1, mask2, ...]}
+    """
+    masks_by_class = defaultdict(list)
+
+    for class_id, mask in zip(pred_classes, pred_masks):
+        masks_by_class[class_id.item()].append(mask)
+
+    return dict(masks_by_class)
+    
+
 # Get class names from metadata
 # metadata = metadata_obj.metadata
 # class_names = metadata.get("thing_classes", None)
 # print(class_names)
-
-print(pred_output_obj["instances"].pred_classes)
+instances = pred_output_obj["instances"].to("cpu")
+masks = instances.pred_masks.numpy()
+classes = instances.pred_classes.numpy()
+boxes = instances.pred_boxes
+scores = instances.scores.numpy()
+print(f"Classes --> {classes}")
+print(f"Scores --> {scores}")
 
 vslr_obj = Visualizer(img_cv2_obj[:,:,::-1], metadata=metadata_obj, scale=1, instance_mode=ColorMode.SEGMENTATION)
 img_output_pred = vslr_obj.draw_instance_predictions(pred_output_obj["instances"].to("cpu"))
